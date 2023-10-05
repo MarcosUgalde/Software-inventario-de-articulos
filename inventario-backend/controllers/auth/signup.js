@@ -7,7 +7,7 @@ module.exports = (db) => async (req, res, next) => {
 
   const encrypted = await hash.encrypt(password);
 
-  const response = await createUser(await db)(email, username, password);
+  const response = await createUser(await db)(email, username, encrypted);
 
   if (!response.ok) return next(errors[500]);
 

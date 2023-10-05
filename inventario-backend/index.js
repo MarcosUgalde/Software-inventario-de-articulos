@@ -19,7 +19,7 @@ app.use((_, __, next) => {
   next(errors[404]);
 });
 
-app.use(({ statusCode, error }, _, res, _) => {
+app.use(({ statusCode, error }, _, res, __) => {
   res.status(statusCode).json({
     success: false,
     message: error.message,

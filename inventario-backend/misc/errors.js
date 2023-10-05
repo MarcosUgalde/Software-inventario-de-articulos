@@ -5,7 +5,7 @@ module.exports = {
   },
   wrong_data: {
     statusCode: 400,
-    error: new Error("username or password incorrects"),
+    error: new Error("email or password incorrects"),
   },
   pass_length: {
     statusCode: 400,
