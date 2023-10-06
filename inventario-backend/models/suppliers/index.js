@@ -2,6 +2,7 @@ const {
   insertSupplier,
   selectSuppliers,
   selectOneSupplier,
+  updateSupplier,
 } = require("./queries");
 
 const createSupplier =
@@ -58,8 +59,29 @@ const getOneSupplier = (db) => async (id) => {
   }
 };
 
+const updateSupplierInfo =
+  (db) => async (supplier_name, contact_sup, supplier_description, id) => {
+    try {
+      const response = await db.query(
+        updateSupplier(supplier_name, contact_sup, supplier_description, id)
+      );
+
+      return {
+        ok: true,
+        response: response.rows,
+      };
+    } catch (error) {
+      console.info("> Update suppliers rows error: ", error.message);
+      return {
+        ok: false,
+        message: error.message,
+      };
+    }
+  };
+
 module.exports = {
   createSupplier,
   getSuppliers,
   getOneSupplier,
+  updateSupplierInfo,
 };
