@@ -14,6 +14,11 @@ const insertProduct = (
     )
 `;
 
+const selectProducts = () => sql.unsafe`
+      SELECT * FROM products
+`;
+
 module.exports = {
   insertProduct,
+  selectProducts,
 };
