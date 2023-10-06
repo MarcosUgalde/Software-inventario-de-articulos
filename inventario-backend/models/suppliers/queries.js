@@ -33,9 +33,15 @@ const updateSupplier = (
       WHERE suppliers.id = ${id}
 `;
 
+const deleteSupplier = (id) => sql.unsafe`
+  DELETE FROM suppliers
+  WHERE id = ${id}
+`;
+
 module.exports = {
   insertSupplier,
   selectSuppliers,
   selectOneSupplier,
   updateSupplier,
+  deleteSupplier,
 };

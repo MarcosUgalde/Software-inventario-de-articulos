@@ -3,6 +3,7 @@ const {
   selectSuppliers,
   selectOneSupplier,
   updateSupplier,
+  deleteSupplier,
 } = require("./queries");
 
 const createSupplier =
@@ -79,9 +80,27 @@ const updateSupplierInfo =
     }
   };
 
+const eliminateSupplier = (db) => async (id) => {
+  try {
+    await db.query(deleteSupplier(id));
+
+    return {
+      ok: true,
+    };
+  } catch (error) {
+    console.info("> Supplier elimination error: ", error.message);
+
+    return {
+      ok: false,
+      message: error.message,
+    };
+  }
+};
+
 module.exports = {
   createSupplier,
   getSuppliers,
   getOneSupplier,
   updateSupplierInfo,
+  eliminateSupplier,
 };

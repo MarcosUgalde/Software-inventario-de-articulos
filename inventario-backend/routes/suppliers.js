@@ -8,6 +8,7 @@ module.exports = (db) => {
   router.get("/all", authorizer(), suppliersControllers.getSuppliers(db));
   router.get("/:id", authorizer(), suppliersControllers.getOneSupplier(db));
   router.put("/:id", authorizer(), suppliersControllers.editSupplier(db));
+  router.delete("/:id", authorizer(), suppliersControllers.deleteSupplier(db));
 
   return router;
 };
