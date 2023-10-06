@@ -15,8 +15,13 @@ const insertSupplier = (
 const selectSuppliers = () => sql.unsafe`
       SELECT * FROM suppliers
 `;
+const selectOneSupplier = (id) => sql.unsafe`
+      SELECT * FROM suppliers
+      WHERE suppliers.id = ${id}
+`;
 
 module.exports = {
   insertSupplier,
   selectSuppliers,
+  selectOneSupplier,
 };

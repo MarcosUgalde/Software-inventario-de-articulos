@@ -1,4 +1,8 @@
-const { insertSupplier, selectSuppliers } = require("./queries");
+const {
+  insertSupplier,
+  selectSuppliers,
+  selectOneSupplier,
+} = require("./queries");
 
 const createSupplier =
   (db) => async (supplier_name, contact_sup, supplier_description) => {
@@ -37,7 +41,25 @@ const getSuppliers = (db) => async () => {
   }
 };
 
+const getOneSupplier = (db) => async (id) => {
+  try {
+    const response = await db.query(selectOneSupplier(id));
+
+    return {
+      ok: true,
+      response: response.rows,
+    };
+  } catch (error) {
+    console.info("> Get one supplier error: ", error.message);
+    return {
+      ok: false,
+      message: error.message,
+    };
+  }
+};
+
 module.exports = {
   createSupplier,
   getSuppliers,
+  getOneSupplier,
 };
