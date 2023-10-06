@@ -6,7 +6,7 @@ module.exports = (db) => async (req, res, next) => {
 
   const elimination = await eliminateSupplier(await db)(id);
 
-  if (!elimination) return next(errors[500]);
+  if (!elimination.ok) return next(errors[500]);
 
   res.status(200).json({
     success: true,

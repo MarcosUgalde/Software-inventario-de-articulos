@@ -4,7 +4,7 @@ const errors = require("../../misc/errors");
 module.exports = (db) => async (req, res, next) => {
   const products = await getProducts(await db)();
 
-  if (!products) return next(errors[500]);
+  if (!products.ok) return next(errors[500]);
 
   res.status(200).json({
     success: true,

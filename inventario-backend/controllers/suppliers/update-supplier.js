@@ -11,7 +11,7 @@ module.exports = (db) => async (req, res, next) => {
     id
   );
 
-  if (!supplier) return next(errors[500]);
+  if (!supplier.ok) return next(errors[500]);
 
   res.status(200).json({
     success: true,
