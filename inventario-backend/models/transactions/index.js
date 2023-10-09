@@ -1,4 +1,8 @@
-const { insertTransaction, selectTransactions } = require("./queries");
+const {
+  insertTransaction,
+  selectTransactions,
+  selectOneTransaction,
+} = require("./queries");
 
 const createTransaction =
   (db) => async (transaction_type, product_id, transaction_quantity) => {
@@ -37,7 +41,25 @@ const getTransactions = (db) => async () => {
   }
 };
 
+const getOneTransaction = (db) => async (id) => {
+  try {
+    const response = await db.query(selectOneTransaction(id));
+
+    return {
+      ok: true,
+      response: response.rows,
+    };
+  } catch (error) {
+    console.info("> One transaction selection error: ", error.message);
+    return {
+      ok: false,
+      message: error.message,
+    };
+  }
+};
+
 module.exports = {
   createTransaction,
   getTransactions,
+  getOneTransaction,
 };

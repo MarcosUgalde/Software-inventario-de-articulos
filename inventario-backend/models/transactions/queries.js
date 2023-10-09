@@ -16,7 +16,13 @@ const selectTransactions = () => sql.unsafe`
       SELECT * FROM transactions
 `;
 
+const selectOneTransaction = (id) => sql.unsafe`
+      SELECT * FROM transactions
+      WHERE id = ${id}
+`;
+
 module.exports = {
   insertTransaction,
   selectTransactions,
+  selectOneTransaction,
 };
