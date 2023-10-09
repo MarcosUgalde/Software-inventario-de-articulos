@@ -38,9 +38,15 @@ const updateProduct = (
       WHERE products.id = ${id}
 `;
 
+const deleteProduct = (id) => sql.unsafe`
+  DELETE from products
+  WHERE id = ${id}
+`;
+
 module.exports = {
   insertProduct,
   selectProducts,
   selectOneProduct,
   updateProduct,
+  deleteProduct,
 };

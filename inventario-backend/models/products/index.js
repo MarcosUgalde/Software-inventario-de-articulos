@@ -3,6 +3,7 @@ const {
   selectProducts,
   selectOneProduct,
   updateProduct,
+  deleteProduct,
 } = require("./queries");
 
 const createProduct =
@@ -104,9 +105,26 @@ const editProduct =
     }
   };
 
+const eliminateProduct = (db) => async (id) => {
+  try {
+    await db.query(deleteProduct(id));
+
+    return {
+      ok: true,
+    };
+  } catch (error) {
+    console.info("> Product elimination error: ", error.message);
+    return {
+      ok: false,
+      message: error.message,
+    };
+  }
+};
+
 module.exports = {
   createProduct,
   getProducts,
   getOneProduct,
   editProduct,
+  eliminateProduct,
 };

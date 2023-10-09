@@ -8,6 +8,7 @@ module.exports = (db) => {
   router.get("/all", authorizer(), productsControllers.getProducts(db));
   router.get("/:id", authorizer(), productsControllers.getOneProduct(db));
   router.put("/:id", authorizer(), productsControllers.updateProduct(db));
+  router.delete("/:id", authorizer(), productsControllers.deleteProduct(db));
 
   return router;
 };
