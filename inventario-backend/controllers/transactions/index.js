@@ -3,4 +3,5 @@ module.exports = {
   getTransactions: require("./get-transactions"),
   getOneTransaction: require("./get-one-transaction"),
   updateTransaction: require("./update-transaction"),
+  deleteTransaction: require("./delete-transaction"),
 };

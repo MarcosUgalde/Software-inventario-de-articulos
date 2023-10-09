@@ -36,9 +36,15 @@ const updateTransaction = (
       WHERE id = ${id}
 `;
 
+const deleteTransaction = (id) => sql.unsafe`
+      DELETE FROM transactions
+      WHERE id = ${id}
+`;
+
 module.exports = {
   insertTransaction,
   selectTransactions,
   selectOneTransaction,
   updateTransaction,
+  deleteTransaction,
 };

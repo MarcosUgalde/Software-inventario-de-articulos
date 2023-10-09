@@ -3,6 +3,7 @@ const {
   selectTransactions,
   selectOneTransaction,
   updateTransaction,
+  deleteTransaction,
 } = require("./queries");
 
 const createTransaction =
@@ -93,9 +94,25 @@ const editTransaction =
     }
   };
 
+const eliminateTransaction = (db) => async (id) => {
+  try {
+    await db.query(deleteTransaction(id));
+    return {
+      ok: true,
+    };
+  } catch (error) {
+    console.info("> Transaction elimination error: ", error.message);
+    return {
+      ok: false,
+      message: error.message,
+    };
+  }
+};
+
 module.exports = {
   createTransaction,
   getTransactions,
   getOneTransaction,
   editTransaction,
+  eliminateTransaction,
 };

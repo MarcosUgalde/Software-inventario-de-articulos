@@ -16,6 +16,11 @@ module.exports = (db) => {
     authorizer(),
     transactionsControllers.updateTransaction(db)
   );
+  router.delete(
+    "/:id",
+    authorizer(),
+    transactionsControllers.deleteTransaction(db)
+  );
 
   return router;
 };
