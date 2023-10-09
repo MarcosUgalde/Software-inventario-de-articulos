@@ -11,6 +11,11 @@ module.exports = (db) => {
     authorizer(),
     transactionsControllers.getOneTransaction(db)
   );
+  router.put(
+    "/:id",
+    authorizer(),
+    transactionsControllers.updateTransaction(db)
+  );
 
   return router;
 };

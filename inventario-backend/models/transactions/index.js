@@ -2,6 +2,7 @@ const {
   insertTransaction,
   selectTransactions,
   selectOneTransaction,
+  updateTransaction,
 } = require("./queries");
 
 const createTransaction =
@@ -58,8 +59,43 @@ const getOneTransaction = (db) => async (id) => {
   }
 };
 
+const editTransaction =
+  (db) =>
+  async (
+    transaction_date,
+    transaction_type,
+    product_id,
+    transaction_quantity,
+    id
+  ) => {
+    try {
+      const response = await db.query(
+        updateTransaction(
+          transaction_date,
+          transaction_type,
+          product_id,
+          transaction_quantity,
+          id
+        )
+      );
+
+      return {
+        ok: true,
+        response: response.rows,
+      };
+    } catch (error) {
+      console.info("> Transaction update error: ", error.message);
+
+      return {
+        ok: false,
+        message: error.message,
+      };
+    }
+  };
+
 module.exports = {
   createTransaction,
   getTransactions,
   getOneTransaction,
+  editTransaction,
 };

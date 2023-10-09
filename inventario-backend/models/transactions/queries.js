@@ -21,8 +21,24 @@ const selectOneTransaction = (id) => sql.unsafe`
       WHERE id = ${id}
 `;
 
+const updateTransaction = (
+  transaction_date,
+  transaction_type,
+  product_id,
+  transaction_quantity,
+  id
+) => sql.unsafe`
+      UPDATE transactions
+      SET transaction_date = ${transaction_date}, 
+      transaction_type = ${transaction_type},
+      product_id = ${product_id},
+      transaction_quantity = ${transaction_quantity}
+      WHERE id = ${id}
+`;
+
 module.exports = {
   insertTransaction,
   selectTransactions,
   selectOneTransaction,
+  updateTransaction,
 };
