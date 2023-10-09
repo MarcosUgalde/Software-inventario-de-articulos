@@ -23,8 +23,24 @@ const selectOneProduct = (id) => sql.unsafe`
       WHERE id = ${id}
 `;
 
+const updateProduct = (
+  product_name,
+  product_description,
+  product_quantity,
+  _supplier_product_name,
+  id
+) => sql.unsafe`
+      UPDATE products
+      SET product_name = ${product_name},
+      product_description = ${product_description},
+      product_quantity = ${product_quantity},
+      _supplier_product_name = ${_supplier_product_name}
+      WHERE products.id = ${id}
+`;
+
 module.exports = {
   insertProduct,
   selectProducts,
   selectOneProduct,
+  updateProduct,
 };

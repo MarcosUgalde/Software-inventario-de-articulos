@@ -2,6 +2,7 @@ const {
   insertProduct,
   selectProducts,
   selectOneProduct,
+  updateProduct,
 } = require("./queries");
 
 const createProduct =
@@ -71,8 +72,41 @@ const getOneProduct = (db) => async (id) => {
   }
 };
 
+const editProduct =
+  (db) =>
+  async (
+    product_name,
+    product_description,
+    product_quantity,
+    _supplier_product_name,
+    id
+  ) => {
+    try {
+      const response = await db.query(
+        updateProduct(
+          product_name,
+          product_description,
+          product_quantity,
+          _supplier_product_name,
+          id
+        )
+      );
+      return {
+        ok: true,
+        response: response.rows,
+      };
+    } catch (error) {
+      console.info("> Update product error: ", error.message);
+      return {
+        ok: false,
+        message: error.message,
+      };
+    }
+  };
+
 module.exports = {
   createProduct,
   getProducts,
   getOneProduct,
+  editProduct,
 };
