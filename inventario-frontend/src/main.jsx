@@ -1,10 +1,16 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import { Switch, Route } from 'wouter'
 import Register from './pages/Register/index.jsx'
+import Provider from './context/Provider.jsx'
 
 const Main = () => {
   return (
-    <Register />
+    <Provider>
+      <Switch>
+        <Route path='/signup' component={Register} />
+      </Switch>
+    </Provider>
   )
 }
 
