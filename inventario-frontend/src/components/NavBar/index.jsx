@@ -28,7 +28,7 @@ const NavBar = () => {
 
     return (
         <Styled.Nav>
-            <CustomLink href='' ></CustomLink>
+            <CustomLink href='/' >Main menu</CustomLink>
             <CustomLink href='' ></CustomLink>
             {data && (
                 <Styled.Userlogout>
