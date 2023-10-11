@@ -8,3 +8,16 @@ export const getProduct = (client) => async () => {
     return null;
   }
 };
+
+export const addProduct =
+  (client) =>
+  async ({ payload }) => {
+    try {
+      const { data } = await client.post("/product/new", payload);
+      console.info("> Product insertion info: ", data);
+      return data;
+    } catch (error) {
+      console.info("> Product insertion error: ", error.message);
+      return { success: false };
+    }
+  };
