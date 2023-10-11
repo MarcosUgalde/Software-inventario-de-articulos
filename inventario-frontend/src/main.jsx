@@ -7,6 +7,7 @@ import Login from './pages/Login/index.jsx'
 import Guard from './components/Guard/index.jsx'
 import MainPanel from './pages/MainPanel/index.jsx'
 import NavBar from './components/NavBar/index.jsx'
+import Suppliers from './pages/Suppliers/index.jsx'
 
 const Main = () => {
   return (
@@ -17,6 +18,9 @@ const Main = () => {
         <Route path='/login' component={Login} />
         <Route path='/'>
           <Guard component={MainPanel} />
+        </Route>
+        <Route path='/suppliers'>
+          <Guard component={Suppliers} />
         </Route>
         <Redirect to='/login' />
       </Switch>

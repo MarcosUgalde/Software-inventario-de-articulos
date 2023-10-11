@@ -9,7 +9,7 @@ const Nav = styled.nav`
 
 const Anchor = styled.a`
     ${({ isActive }) => `
-        color: ${isActive ? 'yellow' : 'red'}
+        color: ${isActive ? 'green' : 'red'}
         text-decoration: ${!isActive && 'none'}
     `}
 `
@@ -39,7 +39,7 @@ const Dropdown = styled.ul`
 
     &:hover {
         color: red;
-    }
+        }
     }
 `
 
