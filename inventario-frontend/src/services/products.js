@@ -9,15 +9,13 @@ export const getProduct = (client) => async () => {
   }
 };
 
-export const addProduct =
-  (client) =>
-  async ({ payload }) => {
-    try {
-      const { data } = await client.post("/product/new", payload);
-      console.info("> Product insertion info: ", data);
-      return data;
-    } catch (error) {
-      console.info("> Product insertion error: ", error.message);
-      return { success: false };
-    }
-  };
+export const addProduct = (client) => async (params) => {
+  try {
+    const { data } = await client.post("/products/new", params);
+    console.info("> Product insertion info: ", data);
+    return data;
+  } catch (error) {
+    console.info("> Product insertion error: ", error.message);
+    return { success: false };
+  }
+};

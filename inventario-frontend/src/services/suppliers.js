@@ -11,7 +11,7 @@ export const infoSuppliers = (client) => async () => {
 
 export const infoOneSupplier = (client) => async (id) => {
   try {
-    const { data: response } = await client.get(`/suppliers/:${id}`);
+    const { data: response } = await client.get(`/suppliers/${id}`);
     console.info("> SUpplier info: ", response);
     return response.data;
   } catch (error) {
