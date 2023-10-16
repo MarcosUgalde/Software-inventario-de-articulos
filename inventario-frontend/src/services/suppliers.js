@@ -19,3 +19,13 @@ export const infoOneSupplier = (client) => async (id) => {
     return null;
   }
 };
+export const insertSupplier = (client) => async (params) => {
+  try {
+    const { data } = await client.post("/suppliers/new", params);
+    console.info("Supplier insertion completed: ", data);
+    return data;
+  } catch (error) {
+    console.info("Insert supplier service error: ", error.message);
+    return { success: false };
+  }
+};
