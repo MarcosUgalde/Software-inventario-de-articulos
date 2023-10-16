@@ -13,5 +13,6 @@ export const useProdInsertion = () => {
       console.info("> Product insertion completed");
     },
   });
+
   return insertProduct;
 };
