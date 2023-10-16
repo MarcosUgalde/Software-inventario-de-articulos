@@ -9,6 +9,7 @@ import MainPanel from './pages/MainPanel/index.jsx'
 import NavBar from './components/NavBar/index.jsx'
 import Suppliers from './pages/Suppliers/index.jsx'
 import Newproduct from './pages/NewProduct/index.jsx'
+import Newsupplier from './pages/Newsupplier/index.jsx'
 
 const Main = () => {
   return (
@@ -25,6 +26,9 @@ const Main = () => {
         </Route>
         <Route path='/new-product'>
           <Guard component={Newproduct} />
+        </Route>
+        <Route path='/new-supplier'>
+          <Guard component={Newsupplier} />
         </Route>
         <Redirect to='/login' />
       </Switch>

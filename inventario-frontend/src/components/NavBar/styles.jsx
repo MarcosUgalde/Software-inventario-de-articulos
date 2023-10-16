@@ -4,12 +4,12 @@ const Nav = styled.nav`
     display: flex;
     justify-content: flex-end;
     font-size: 1.5rem;
-    gap: 1.5 rem;
+    gap: 1.1em;
 `
 
 const Anchor = styled.a`
     ${({ isActive }) => `
-        color: ${isActive ? 'green' : 'red'}
+        color: ${isActive ? 'green' : 'black'}
         text-decoration: ${!isActive && 'none'}
     `}
 `

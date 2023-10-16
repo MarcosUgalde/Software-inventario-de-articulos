@@ -1,5 +1,5 @@
-import Styled from './styles'
 import { Link, useRoute } from 'wouter'
+import Styled from './styles'
 import { useUser, useLogout } from '../../hooks'
 import { useState } from 'react'
 
@@ -8,7 +8,7 @@ const CustomLink = ({ href, children }) => {
 
     return (
         <Link {...{ href }}>
-            <Styled.Anchor {...{ href, isActive }} >{children}</Styled.Anchor>
+            <Styled.Anchor {...{ href, isActive }}>{children}</Styled.Anchor>
         </Link>
     )
 }
@@ -30,6 +30,7 @@ const NavBar = () => {
         <Styled.Nav>
             <CustomLink href='/' >Main menu</CustomLink>
             <CustomLink href='/suppliers' >Suppliers</CustomLink>
+            <CustomLink href='/new-product'>Add new product</CustomLink>
             {data && (
                 <Styled.Userlogout>
                 <Styled.User onClick={toggleDropDown}>{data?.username}</Styled.User>
