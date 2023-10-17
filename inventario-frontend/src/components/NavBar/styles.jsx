@@ -3,14 +3,14 @@ import { styled } from 'styled-components'
 const Nav = styled.nav`
     display: flex;
     justify-content: flex-end;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     gap: 1.1em;
 `
 
 const Anchor = styled.a`
     ${({ isActive }) => `
-        color: ${isActive ? 'green' : 'black'}
-        text-decoration: ${!isActive && 'none'}
+        color: ${isActive ? 'green' : 'black'};
+        text-decoration: ${!isActive && 'none'};
     `}
 `
 const Userlogout = styled.section`

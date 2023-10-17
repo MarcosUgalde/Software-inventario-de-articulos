@@ -31,6 +31,7 @@ const NavBar = () => {
             <CustomLink href='/' >Main menu</CustomLink>
             <CustomLink href='/suppliers' >Suppliers</CustomLink>
             <CustomLink href='/new-product'>Add new product</CustomLink>
+            <CustomLink href='/new-supplier'>Add new supplier</CustomLink>
             {data && (
                 <Styled.Userlogout>
                 <Styled.User onClick={toggleDropDown}>{data?.username}</Styled.User>
