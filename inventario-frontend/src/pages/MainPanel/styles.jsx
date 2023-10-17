@@ -13,14 +13,15 @@ const Body = styled.section`
     }
 `
 
-const Table = styled.table`
-    
+const Table = styled.table`  
     box-shadow: 1px 12px 8px -4px rgba(0,0,0,0.75);
 `
 
 const Name = styled.th`
     width: 120px;
+    height: 2.5em;
     background-color: #FF595E;
+    padding-top: 1.2em;
 `
 const Desc = styled.th`
     width: 300px;
@@ -38,14 +39,19 @@ const Supplier = styled.th`
 
 const Namecell = styled.td`
     background-color: #FF595E;
+    display: flex;
+    justify-content: center;
 `
 
 const Desccell = styled.td`
     background-color: #FFCA3A;
+    
 `
 
 const Stockcell = styled.td`
     background-color: #8AC926;
+    display: flex;
+    justify-content: center;
 `
 
 const Supcell = styled.td`
