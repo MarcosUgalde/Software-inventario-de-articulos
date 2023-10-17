@@ -1,30 +1,31 @@
+import Styled from './styles'
 import { useProducts } from "../../hooks"
 
 function MainPanel() {
     const { data: productsInfo }= useProducts()
 
     return (
-        <>
+        <Styled.Body>
             <h2>Products</h2>
-            <table>
-                <th>Name</th>
-                <th>Description</th>
-                <th>Stock</th>
-                <th>Supplier</th>
+            <Styled.Table>
+                <Styled.Name>Name</Styled.Name>
+                <Styled.Desc>Description</Styled.Desc>
+                <Styled.Stock>Stock</Styled.Stock>
+                <Styled.Supplier>Supplier</Styled.Supplier>
                 {productsInfo?.map((product, index) => {
                     return (
                         <>
                             <tr>
-                                <td key={index}>{product.product_name}</td>
-                                <td>{product.product_description}</td>
-                                <td>{product.product_quantity}</td>
-                                <td>{product._supplier_product_name}</td>
+                                <Styled.Namecell key={index}>{product.product_name}</Styled.Namecell>
+                                <Styled.Desccell>{product.product_description}</Styled.Desccell>
+                                <Styled.Stockcell>{product.product_quantity}</Styled.Stockcell>
+                                <Styled.Supcell>{product._supplier_product_name}</Styled.Supcell>
                             </tr>
                         </>
                     )
                 })}
-            </table>
-        </>
+            </Styled.Table>
+        </Styled.Body>
     )
 }
 
