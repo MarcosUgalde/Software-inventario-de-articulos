@@ -1,3 +1,4 @@
+import Styled from './styles'
 import { useForm } from 'react-hook-form'
 import { useMutation } from 'react-query'
 import { useLocation } from 'wouter'
@@ -25,24 +26,33 @@ function Register() {
   const { errors } = login
 
   return (
-    <>
-      <h1>Sign up</h1>
-      <form onSubmit={handleSubmit(handleForm)}>
-          <label htmlFor="email">Email</label>
-          <input type="text" id='email' placeholder='example@gmail.com' {...register('email', {required: true})} />
-          <p>{formState.errors && errors[formState.errors?.email?.type]}</p>
-          <label htmlFor="username">Username</label>
-          <input type="text" id='username' placeholder='username' {...register("username", { required: true})} />
-          <p>{formState.errors && errors[formState.errors?.username?.type]}</p>
-          <label htmlFor="password">Password</label>
-          <input type="text" id='password' placeholder='Length must be at least 8' {...register('password', {required: true, minLength: 8})} />
-          <p>{formState.errors && errors[formState.errors?.password?.type]}</p>
-          <input type="submit" />
-      </form>
-      <footer>
-        Already have an account? <a>Login here!</a>
-      </footer>
-    </>
+    <Styled.Body>
+      <Styled.Form onSubmit={handleSubmit(handleForm)}>
+          <h1>Sign up</h1>
+          <Styled.Field>
+            <label htmlFor="email">Email</label>
+            <input type="text" id='email' placeholder='example@gmail.com' {...register('email', {required: true})} />
+            <p>{formState.errors && errors[formState.errors?.email?.type]}</p>
+          </Styled.Field>
+          <Styled.Field>
+            <label htmlFor="username">Username</label>
+            <input type="text" id='username' placeholder='username' {...register("username", { required: true})} />
+            <p>{formState.errors && errors[formState.errors?.username?.type]}</p>
+          </Styled.Field>
+          <Styled.Field>
+            <label htmlFor="password">Password</label>
+            <input type="text" id='password' placeholder='Length must be at least 8' {...register('password', {required: true, minLength: 8})} />
+            <p>{formState.errors && errors[formState.errors?.password?.type]}</p>
+          </Styled.Field>
+          <Styled.Submit type="submit" />
+      </Styled.Form>
+      <Styled.Footer>
+        <p>Already have an account?</p> 
+        <Styled.Signup>
+          <Styled.Anchor href='/login'>Login here!</Styled.Anchor>
+        </Styled.Signup>
+      </Styled.Footer>
+    </Styled.Body>
   )
 }
 
