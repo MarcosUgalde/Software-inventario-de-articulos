@@ -1,5 +1,6 @@
 import Styled from './styles'
 import { useProducts } from "../../hooks"
+import { Link } from 'wouter'
 
 function MainPanel() {
     const { data: productsInfo }= useProducts()
@@ -16,7 +17,7 @@ function MainPanel() {
                     return (
                         <>
                             <tr>
-                                <Styled.Namecell key={index}>{product.product_name}</Styled.Namecell>
+                                <Styled.Namecell key={index}>{product.product_name} <Link to={`/update-product/${product.id}`} style={{ textDecoration: 'none' }} >✏️</Link></Styled.Namecell>
                                 <Styled.Desccell>{product.product_description}</Styled.Desccell>
                                 <Styled.Stockcell>{product.product_quantity}</Styled.Stockcell>
                                 <Styled.Supcell>{product._supplier_product_name}</Styled.Supcell>
