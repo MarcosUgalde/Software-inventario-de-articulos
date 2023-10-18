@@ -38,9 +38,11 @@ const Supplier = styled.th`
 `
 
 const Namecell = styled.td`
+    height: 2.0em;
     background-color: #FF595E;
     display: flex;
     justify-content: center;
+    align-items: center;
 `
 
 const Desccell = styled.td`
@@ -49,9 +51,11 @@ const Desccell = styled.td`
 `
 
 const Stockcell = styled.td`
+    height: 2.0em;
     background-color: #8AC926;
     display: flex;
     justify-content: center;
+    align-items: center;
 `
 
 const Supcell = styled.td`
