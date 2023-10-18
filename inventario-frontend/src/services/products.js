@@ -19,3 +19,14 @@ export const addProduct = (client) => async (params) => {
     return { success: false };
   }
 };
+
+export const editProduct = (client) => async (params) => {
+  try {
+    const { data } = await client.put("/id", params);
+    console.info("> Product successfully updated: ", data);
+    return data;
+  } catch (error) {
+    console.info("> Product update error: ", error.message);
+    return { success: false };
+  }
+};
