@@ -21,7 +21,7 @@ const user = {
 
 const products = {
   getProducts: getProduct(client),
-  getOnseProduct: getOneProduct(client),
+  getOneProduct: getOneProduct(client),
   addProduct: addProduct(client),
   editProduuct: editProduct(client),
 };

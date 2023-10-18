@@ -10,6 +10,7 @@ import NavBar from './components/NavBar/index.jsx'
 import Suppliers from './pages/Suppliers/index.jsx'
 import Newproduct from './pages/NewProduct/index.jsx'
 import Newsupplier from './pages/Newsupplier/index.jsx'
+import Updateproduct from './pages/Updateproduct/index.jsx'
 
 const Main = () => {
   return (
@@ -29,6 +30,9 @@ const Main = () => {
         </Route>
         <Route path='/new-supplier'>
           <Guard component={Newsupplier} />
+        </Route>
+        <Route path='/update-product/:id'>
+          <Guard component={Updateproduct} />
         </Route>
         <Redirect to='/login' />
       </Switch>

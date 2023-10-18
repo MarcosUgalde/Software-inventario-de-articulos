@@ -9,9 +9,9 @@ export const getProduct = (client) => async () => {
   }
 };
 
-export const getOneProduct = (client) => async () => {
+export const getOneProduct = (client) => async (id) => {
   try {
-    const { data: response } = await client.get("/products/:id");
+    const { data: response } = await client.get(`/products/${id}`);
     console.info("> Product info: ", response);
     return response.data;
   } catch (error) {
@@ -33,7 +33,8 @@ export const addProduct = (client) => async (params) => {
 
 export const editProduct = (client) => async (params) => {
   try {
-    const { data } = await client.put("/id", params);
+    console.log("Params in service: ", params);
+    const { data } = await client.put(`/products/${params.productId}`, params);
     console.info("> Product successfully updated: ", data);
     return data;
   } catch (error) {
