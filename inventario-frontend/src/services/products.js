@@ -9,6 +9,17 @@ export const getProduct = (client) => async () => {
   }
 };
 
+export const getOneProduct = (client) => async () => {
+  try {
+    const { data: response } = await client.get("/products/:id");
+    console.info("> Product info: ", response);
+    return response.data;
+  } catch (error) {
+    console.info("> Get one product error: ", error.message);
+    return null;
+  }
+};
+
 export const addProduct = (client) => async (params) => {
   try {
     const { data } = await client.post("/products/new", params);
