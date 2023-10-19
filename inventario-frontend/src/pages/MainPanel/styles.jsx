@@ -3,7 +3,7 @@ import { styled } from 'styled-components'
 const Body = styled.section`
     padding-top: 2em;
     background-color: #C9FFE2;
-    height: 100vh;
+    height: 89vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -14,7 +14,7 @@ const Table = styled.table`
 `
 
 const Name = styled.th`
-    width: 120px;
+    width: 150px;
     height: 2.5em;
     background-color: #7DD181;
     padding-top: 1.2em;
@@ -61,6 +61,7 @@ const Supcell = styled.td`
 const Delete = styled.button`
     background-color: transparent;
     border: none;
+    cursor: pointer;
 `
 
 export default {
