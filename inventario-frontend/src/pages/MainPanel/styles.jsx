@@ -2,15 +2,11 @@ import { styled } from 'styled-components'
 
 const Body = styled.section`
     padding-top: 2em;
-    background-color: #6A4C93;
+    background-color: #C9FFE2;
     height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    h2 {
-        color: white;
-    }
 `
 
 const Table = styled.table`  
@@ -20,46 +16,46 @@ const Table = styled.table`
 const Name = styled.th`
     width: 120px;
     height: 2.5em;
-    background-color: #FF595E;
+    background-color: #7DD181;
     padding-top: 1.2em;
 `
 const Desc = styled.th`
     width: 300px;
-    background-color: #FFCA3A;
+    background-color: #96E8BC;
 `
 
 const Stock = styled.th`
     width: 80px;
-    background-color: #8AC926;
+    background-color: #7DD181;
 `
 
 const Supplier = styled.th`
-    background-color: #1982C4;
+    background-color: #96E8BC;
 `
 
 const Namecell = styled.td`
     height: 2.0em;
-    background-color: #FF595E;
+    background-color: #7DD181;
     display: flex;
     justify-content: center;
     align-items: center;
 `
 
 const Desccell = styled.td`
-    background-color: #FFCA3A;
+    background-color: #96E8BC;
     
 `
 
 const Stockcell = styled.td`
     height: 2.0em;
-    background-color: #8AC926;
+    background-color: #7DD181;
     display: flex;
     justify-content: center;
     align-items: center;
 `
 
 const Supcell = styled.td`
-    background-color: #1982C4;
+    background-color: #96E8BC;
 `
 
 const Delete = styled.button`
