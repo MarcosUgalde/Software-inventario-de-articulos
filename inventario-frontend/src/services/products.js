@@ -44,7 +44,8 @@ export const editProduct = (client) => async (params) => {
 
 export const deleteProduct = (client) => async (params) => {
   try {
-    const { data } = await client.delete("/products/:id", params);
+    console.log("Params in delete service: ", params);
+    const { data } = await client.delete(`/products/${params}`, params);
     console.info("> Product deleted");
     return data;
   } catch (error) {
