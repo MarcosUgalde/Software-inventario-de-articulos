@@ -1,5 +1,5 @@
 import Styled from './styles'
-import { useProducts } from "../../hooks"
+import { useProducts, useDeleteProduct } from "../../hooks"
 import { Link } from 'wouter'
 import DeleteproductModal from '../../components/Delete-product-modal'
 import { useState } from 'react'
@@ -8,15 +8,18 @@ function MainPanel() {
     const { data: productsInfo }= useProducts()
     const [isDeleteModalVisible, setDeleteModalVisible] = useState(false)
     const [productIdToDelete, setProductIdToDelete] = useState(null)
+    const doDeleteProduct = useDeleteProduct()
 
     const openDeleteModal = (id) => {
         setProductIdToDelete(id)
         setDeleteModalVisible(true)
+        return id
     }
 
     const handleDelete = () => {
         if(productIdToDelete) {
-            console.log('Deleting product')
+            console.log('Deleting product with id: ', productIdToDelete)
+            doDeleteProduct(productIdToDelete)
         }
         setDeleteModalVisible(false)
     }
@@ -43,7 +46,7 @@ function MainPanel() {
                 })}
             </Styled.Table>
             {isDeleteModalVisible && (
-                <DeleteproductModal isVisible={isDeleteModalVisible} onClose={() => setDeleteModalVisible(false)} onDelete={handleDelete} />
+                <DeleteproductModal productId={productIdToDelete} isVisible={isDeleteModalVisible} onClose={() => setDeleteModalVisible(false)} onDelete={handleDelete} />
             )}
         </Styled.Body>
     )
