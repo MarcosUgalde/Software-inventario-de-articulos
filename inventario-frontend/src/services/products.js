@@ -33,12 +33,22 @@ export const addProduct = (client) => async (params) => {
 
 export const editProduct = (client) => async (params) => {
   try {
-    console.log("Params in service: ", params);
     const { data } = await client.put(`/products/${params.productId}`, params);
     console.info("> Product successfully updated: ", data);
     return data;
   } catch (error) {
     console.info("> Product update error: ", error.message);
+    return { success: false };
+  }
+};
+
+export const deleteProduct = (client) => async (params) => {
+  try {
+    const { data } = await client.delete("/products/:id", params);
+    console.info("> Product deleted");
+    return data;
+  } catch (error) {
+    console.info("> Product elimination error: ", error.message);
     return { success: false };
   }
 };
