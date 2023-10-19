@@ -62,6 +62,11 @@ const Supcell = styled.td`
     background-color: #1982C4;
 `
 
+const Delete = styled.button`
+    background-color: transparent;
+    border: none;
+`
+
 export default {
     Body,
     Table,
@@ -72,5 +77,6 @@ export default {
     Namecell,
     Desccell,
     Stockcell,
-    Supcell
+    Supcell,
+    Delete
 }
