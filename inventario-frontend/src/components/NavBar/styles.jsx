@@ -9,8 +9,9 @@ const Nav = styled.nav`
 
 const Anchor = styled.a`
     ${({ isActive }) => `
-        color: ${isActive ? 'green' : 'black'};
+        color: ${isActive ? '#7DD181' : '#4DA1A9'};
         text-decoration: ${!isActive && 'none'};
+        transition: 0.4s
     `}
 `
 const Userlogout = styled.section`
