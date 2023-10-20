@@ -29,3 +29,14 @@ export const insertSupplier = (client) => async (params) => {
     return { success: false };
   }
 };
+
+export const editSupplier = (client) => async (params) => {
+  try {
+    const { data } = await client.put("suppliers/:id", params);
+    console.info("Supplier update completed: ", data);
+    return data;
+  } catch (error) {
+    console.info("Update supplier service error: ", error.message);
+    return { success: false };
+  }
+};

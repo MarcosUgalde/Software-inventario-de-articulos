@@ -8,7 +8,12 @@ import {
   getOneProduct,
   deleteProduct,
 } from "./products";
-import { infoSuppliers, infoOneSupplier, insertSupplier } from "./suppliers";
+import {
+  infoSuppliers,
+  infoOneSupplier,
+  insertSupplier,
+  editSupplier,
+} from "./suppliers";
 
 const client = axios.create({
   baseURL: import.meta.env.VITE_API_URL,
@@ -37,6 +42,7 @@ const suppliers = {
   getSuppliers: infoSuppliers(client),
   getOneSupplier: infoOneSupplier(client),
   addSupplier: insertSupplier(client),
+  updateSupplier: editSupplier(client),
 };
 
 export { auth, user, products, suppliers };
