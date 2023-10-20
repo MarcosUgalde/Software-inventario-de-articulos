@@ -44,6 +44,12 @@ const Descell = styled.td`
     padding: 0.5em;
 `
 
+const Delete = styled.button`
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+`
+
 export default {
     Body,
     Table,
@@ -52,5 +58,6 @@ export default {
     Description,
     Namecell,
     Contactcell,
-    Descell
+    Descell,
+    Delete
 }
