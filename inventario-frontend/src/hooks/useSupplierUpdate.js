@@ -8,7 +8,7 @@ export const useSupplierUpdate = () => {
   const { mutate: updateSupplier } = useMutation({
     mutationFn: suppliers.updateSupplier,
     onSuccess: (data) => {
-      if (data.success) setLocation("/sppliers");
+      if (data.success) setLocation("/suppliers");
       console.info("> Product update completed");
     },
   });

@@ -25,7 +25,7 @@ function Updatesupplier() {
                     <input type="button" value='Back' onClick={goBack}/>
                 </form>
             </>
-        ): (
+        ) : (
             <>
                 <p>Loading supplier information...</p>
             </>
