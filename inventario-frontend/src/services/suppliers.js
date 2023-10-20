@@ -32,7 +32,7 @@ export const insertSupplier = (client) => async (params) => {
 
 export const editSupplier = (client) => async (params) => {
   try {
-    const { data } = await client.put("suppliers/:id", params);
+    const { data } = await client.put(`suppliers/${params.supplierId}`, params);
     console.info("Supplier update completed: ", data);
     return data;
   } catch (error) {

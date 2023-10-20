@@ -11,6 +11,7 @@ import Suppliers from './pages/Suppliers/index.jsx'
 import Newproduct from './pages/NewProduct/index.jsx'
 import Newsupplier from './pages/Newsupplier/index.jsx'
 import Updateproduct from './pages/Updateproduct/index.jsx'
+import Updatesupplier from './pages/UpdateSupplier/index.jsx'
 
 const Main = () => {
   return (
@@ -33,6 +34,9 @@ const Main = () => {
         </Route>
         <Route path='/update-product/:id'>
           <Guard component={Updateproduct} />
+        </Route>
+        <Route path='/update-supplier/:id'>
+          <Guard component={Updatesupplier} />
         </Route>
         <Redirect to='/login' />
       </Switch>
