@@ -8,7 +8,7 @@ const Body = styled.section`
     align-items: center;
 `
 
-const Form = styled.section`
+const Form = styled.form`
     background-color: #4DA1A9;
     display: flex;
     flex-direction: column;
