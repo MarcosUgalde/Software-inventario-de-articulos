@@ -9,3 +9,4 @@ export { useProdUpdate } from "./useProdUpdate";
 export { useId } from "./useId";
 export { useDeleteProduct } from "./useDeleteProduct";
 export { useSupplierUpdate } from "./useSupplierUpdate";
+export { useOneSupplier } from "./useOneSupplier";
