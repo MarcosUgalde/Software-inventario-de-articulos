@@ -5,6 +5,7 @@ const Nav = styled.nav`
     justify-content: flex-end;
     font-size: 1.2rem;
     gap: 1.1em;
+    background-color: #22333b;
 `
 
 const Anchor = styled.a`

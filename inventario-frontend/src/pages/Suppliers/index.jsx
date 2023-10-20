@@ -1,28 +1,29 @@
+import Styled from './styles'
 import { useSuppliers } from "../../hooks";
 
 const Suppliers = () => {
     const { data: suppliersInfo } = useSuppliers()
 
     return (
-        <>
+        <Styled.Body>
             <h2>Suppliers</h2>
-            <table>
-                <th>Name</th>
-                <th>Contact</th>
-                <th>Description</th>
+            <Styled.Table>
+                <Styled.Name>Name</Styled.Name>
+                <Styled.Contact>Contact</Styled.Contact>
+                <Styled.Description>Description</Styled.Description>
                 {suppliersInfo?.map((supplier, index) => {
                     return (
                         <>
                             <tr>
-                                <td key={index}>{supplier.supplier_name}</td>
-                                <td>{supplier.contact_sup}</td>
-                                <td>{supplier.supplier_description}</td>
+                                <Styled.Namecell key={index}>{supplier.supplier_name}</Styled.Namecell>
+                                <Styled.Contactcell>{supplier.contact_sup}</Styled.Contactcell>
+                                <Styled.Descell>{supplier.supplier_description}</Styled.Descell>
                             </tr>
                         </>
                     )
                 })}
-            </table>
-        </>
+            </Styled.Table>
+        </Styled.Body>
     )
 }
 
