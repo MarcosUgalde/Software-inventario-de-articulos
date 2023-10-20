@@ -13,6 +13,7 @@ import {
   infoOneSupplier,
   insertSupplier,
   editSupplier,
+  deleteSupplier,
 } from "./suppliers";
 
 const client = axios.create({
@@ -43,6 +44,7 @@ const suppliers = {
   getOneSupplier: infoOneSupplier(client),
   addSupplier: insertSupplier(client),
   updateSupplier: editSupplier(client),
+  deleteSupplier: deleteSupplier(client),
 };
 
 export { auth, user, products, suppliers };

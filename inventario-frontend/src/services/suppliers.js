@@ -40,3 +40,14 @@ export const editSupplier = (client) => async (params) => {
     return { success: false };
   }
 };
+
+export const deleteSupplier = (client) => async (params) => {
+  try {
+    const { data } = await client.delete(`suppliers/${params}`, params);
+    console.info("Suppliers delete completed");
+    return data;
+  } catch (error) {
+    console.info("Delete supplier service error: ", error.message);
+    return { success: false };
+  }
+};
